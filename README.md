@@ -35,11 +35,12 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 ---
 
-## ⚙️ How It Works (Architecture)
+## 🔧 Training Configuration
 
-### 🔹 Step 1: Document Loading
-- Uses `PyPDFLoader` from `langchain_community`  
-- Loads all text from **AppleData-2024.pdf**
+### LoRA Parameters
+- lora_r = 64 → Rank of LoRA matrices
+- lora_alpha = 16 → Scaling factor
+- lora_dropout = 0.1 → Prevents overfitting
 
 ### 🔹 Step 2: Semantic Chunking
 - Uses **SemanticChunker** with **Google Embeddings**  
