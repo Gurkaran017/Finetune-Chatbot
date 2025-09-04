@@ -75,15 +75,9 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 ## 📷 Screenshots  
 
-### 1. Welcome Page  
-![Welcome Page](screenshots/welcome.png)  
+![Welcome Page](screenshots/tensorboard.png)  
 
-### 2. User Asking Question  
-![User Asking Question](screenshots/user_question.png)  
-
-### 3. Bot Responding with Typing Effect  
-![Bot Response](screenshots/bot_response.png)  
-
+![User Asking Question](screenshots/tensorboard2.png)  
 
 ---
 
