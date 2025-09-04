@@ -1,7 +1,7 @@
 # 🚀 Fine-Tuning Falcon-RW-1B with QLoRA
 
-A **Retrieval-Augmented Generation (RAG) chatbot** built with **Streamlit**, **LangChain**, and the **Google Gemini API**.  
-This chatbot lets you **upload and query your PDF knowledge base**, retrieving **context-aware answers** in a smooth chat-like interface.
+This project demonstrates how to **fine-tune a large language model (Falcon-RW-1B)** using **QLoRA** on a **custom instruction dataset**.  
+The goal was to build a resource-efficient chatbot capable of answering questions in a conversational style.
 
 ---
 
