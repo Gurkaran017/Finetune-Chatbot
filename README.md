@@ -24,13 +24,14 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 ---
 
-## 📌 Project Overview
+## 🛠 Tech Stack
 
-- **Base Model** → Falcon-RW-1B 
-- **Dataset Used** → Guanaco-LLaMA2-1K (instruction-tuning dataset)
-- **Fine-Tuning Method** → **QLoRA** (Quantized LoRA) 
-- **Frameworks & Tools** → Hugging Face Transformers, TRL, PEFT, BitsAndBytes, TensorBoard
-- **Output** → A fine-tuned chatbot model saved as falcon-1b-finetune
+- **Hugging Face Transformers** → Load & manage LLMs.
+- **TRL (Transformers Reinforcement Learning)** → Provides SFTTrainer for supervised fine-tuning.
+- **PEFT (Parameter-Efficient Fine-Tuning)** → Implements LoRA adapters. 
+- **BitsAndBytes (bnb)** → Enables 4-bit quantization for QLoRA.
+- **TensorBoard** → Training visualization (loss curves, logs).
+- **PyTorch** → Core deep learning framework.
 
 ---
 
@@ -65,7 +66,7 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 
 ---
-
+s
 ## 📊 Example Workflow
 
 ### 1. Start the App
