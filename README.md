@@ -58,23 +58,18 @@ The goal was to build a resource-efficient chatbot capable of answering question
 - **report_to = "tensorboard"** → Logs to TensorBoard
 
 ---
-s
-## 📊 Example Workflow
 
-### 1. Start the App
-- Loads **PDF** + **Chroma DB**
+## 📉 Training Visualization (TensorBoard)
 
-### 2. Ask a Question
-- Example: *“Summarize key points”*
+- During training, TensorBoard was used to track progress:
 
-### 3. Retrieve Relevant Chunks
-- Retriever fetches **top matching sections** from the document
+- **Training Loss Curve** → Shows model improving over steps.
+- **Logs** → Training speed, memory usage, optimizer info.
 
-### 4. Generate Response
-- **Gemini LLM** creates a contextual answer
-
-### 5. Display Answer
-- Chat interface shows the response with a **typing animation**
+- **Command to launch TensorBoard:**
+   ```bash
+   %load_ext tensorboard
+   %tensorboard --logdir results/runs
 
 ---
 
