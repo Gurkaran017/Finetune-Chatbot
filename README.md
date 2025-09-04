@@ -16,36 +16,21 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 ---
 
-## 📂 Project Structure
+## ⚡ Why QLoRA?
 
-**rag-chatbot/**  
-**│── main.py** – Streamlit UI and chatbot logic  
-**│── vector_store.py** – Creates/loads Chroma vector DB  
-**│── splitter.py** – Splits PDFs into semantic chunks  
-**│── loader.py** – Loads PDF documents  
-**│── config.py** – API keys, model setup, DB paths  
-**│── AppleData-2024.pdf** – Sample knowledge base PDF  
-**│── requirements.txt** – Python dependencies  
-**│── README.md** – Project documentation  
-**│── .env** – Store Google API key here  
-
+- Fine-tuning large models is **memory heavy.**
+- LoRA trains only **small adapter layers,** but still requires model in full precision.
+- **QLoRA** combines LoRA +**4-bit quantization,** allowing fine-tuning on **smaller GPUs** with much lower VRAM usage.
 
 ---
 
-## 🛠️ Installation
+## 📌 Project Overview
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/Gurkaran017/RAG-Chatbot.git
-   cd rag-chatbot
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-
-3. **Setup Environment Variables**
-   ```bash
-   GOOGLE_API_KEY=your_google_api_key_here
+- **Base Model** → Falcon-RW-1B 
+- **Dataset Used** → Guanaco-LLaMA2-1K (instruction-tuning dataset)
+- **Fine-Tuning Method** → **QLoRA** (Quantized LoRA) 
+- **Frameworks & Tools** → Hugging Face Transformers, TRL, PEFT, BitsAndBytes, TensorBoard
+- **Output** → A fine-tuned chatbot model saved as falcon-1b-finetune
 
 ---
 
