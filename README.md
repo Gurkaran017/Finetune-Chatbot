@@ -5,16 +5,14 @@ The goal was to build a resource-efficient chatbot capable of answering question
 
 ---
 
-## 🚀 Features
+## 📌 Project Overview
 
-- 📄 **PDF Knowledge Base** → Chat directly with your documents  
-- 🔍 **Smart Retrieval** → Uses **Chroma DB** for persistent vector storage  
-- 🧠 **AI-Powered Responses** → Powered by **Google Gemini LLM**  
-- 🧩 **Semantic Chunking** → Uses `SemanticChunker` for meaningful document splitting  
-- 💬 **Real-time Chat** → User messages on the right, bot responses on the left  
-- ⏳ **Streaming Mode** → Word-by-word typing effect for a natural chatbot feel  
-- 📊 **Live Statistics** → Track total messages & questions in sidebar  
-- 🗑️ **Clear Chat** → Reset conversation anytime  
+- **Base Model** → Falcon-RW-1B 
+- **Dataset Used** → Guanaco-LLaMA2-1K (instruction-tuning dataset)
+- **Fine-Tuning Method** → **QLoRA** (Quantized LoRA) 
+- **Frameworks & Tools** → Hugging Face Transformers, TRL, PEFT, BitsAndBytes, TensorBoard
+- **Output** → A fine-tuned chatbot model saved as falcon-1b-finetune
+
 
 ---
 
