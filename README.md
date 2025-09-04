@@ -42,29 +42,20 @@ The goal was to build a resource-efficient chatbot capable of answering question
 - **lora_alpha = 16** → Scaling factor
 - **lora_dropout = 0.1** → Prevents overfitting
 
-### 🔹 Step 2: Semantic Chunking
-- Uses **SemanticChunker** with **Google Embeddings**  
-- Breaks the document into **meaningful sections** instead of fixed-size chunks
+### Quantization Parameters (QLoRA)
+- **use_4bit = True** → Enable 4-bit quantization
+- **bnb_4bit_compute_dtype = "float16"** → Math done in half precision
+- **bnb_4bit_quant_type = "nf4"** → NormalFloat4 (better accuracy)
+- **use_nested_quant = False** → No double quantization
 
-### 🔹 Step 3: Vector Database (ChromaDB)
-- Stores embeddings in **ChromaDB (persistent)**  
-- Automatically reuses existing DB if available
-
-### 🔹 Step 4: Query Retrieval
-- User query → Expanded into multiple queries using **MultiQueryRetriever**  
-- Fetches **top k=3** most relevant chunks from Chroma
-
-### 🔹 Step 5: Prompt + LLM
-- Builds a **prompt template** with:  
-  - Conversation history  
-  - Retrieved context  
-  - Latest question  
-- Sends it to **Google Gemini (`gemini-1.5-flash`)**
-
-### 🔹 Step 6: Streaming Response
-- LLM response streamed **word-by-word**  
-- Typing effect for a **natural chat experience**
-
+### Training Arguments
+- **epochs = 1** → Trained for 1 pass over dataset
+- **batch_size = 4** → Training batch size
+- **gradient_checkpointing = True** → Saves GPU memory
+- **learning_rate = 2e-4** → Optimizer learning rate
+- **lr_scheduler = cosine** → Learning rate decay strategy
+- **logging_steps = 25** → Log every 25 steps
+- **report_to = "tensorboard"** → Logs to TensorBoard
 
 ---
 s
