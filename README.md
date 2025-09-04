@@ -80,27 +80,14 @@ The goal was to build a resource-efficient chatbot capable of answering question
 ![User Asking Question](screenshots/tensorboard2.png)  
 
 ---
+## 📊 Training Workflow
 
-## 📌 Dependencies
-
-### 🐍 Python
-- Python **3.9+**
-
-### 📦 Core Libraries
-- **Streamlit**  
-- **LangChain**  
-- **LangChain-Community**  
-- **LangChain-Chroma**
-
-### 🗄️ Optional
-- **FAISS** → optional backup vector database
-
-### 🤖 AI Model
-- **Google Generative AI (Gemini)**
-
-3. **Install via:**
-   ```bash
-   pip install -r requirements.txt
+- **Load Dataset** → Instruction dataset (guanaco-llama2-1k) with question-answer pairs.
+- **Load Base Model** → Falcon-RW-1B loaded in 4-bit precision.
+- **Attach LoRA Adapters** → Small trainable layers added.
+- **Fine-Tune with TRL’s SFTTrainer** → Only LoRA parameters trained, base model stays frozen.
+- **Monitor Training** → Loss visualized in TensorBoard.
+- **Save Fine-Tuned Model** → Exported to falcon-1b-finetune.
 
 ---
 
